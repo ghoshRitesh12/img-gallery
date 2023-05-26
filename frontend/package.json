@@ -1,0 +1,17 @@
+{
+  "name": "img-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port=1000 --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.5"
+  }
+}
