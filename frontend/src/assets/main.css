@@ -18,6 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   isolation: isolate;
+  font-family: sans-serif;
   background-color: #0c0c0c;
 }
 
@@ -85,7 +86,6 @@ h6, textarea {
 }
 
 * {
-  /* color-scheme: dark; */
   scrollbar-color: #aaa #0c0c0c ;
   scrollbar-width: thin;
   transition: 
