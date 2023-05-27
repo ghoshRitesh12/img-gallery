@@ -1,17 +1,27 @@
 <template>
 
-  <button data-filter-card
+  <RouterLink data-filter-card
     class="
-    px-5 py-2 rounded-2xl bg-cyan-200
-    text-black hover:bg-cyan-400
+    px-5 py-2 rounded-2xl capitalize
     transition ease-in duration-150
     "
-    type="button"
+    :class="(
+      $route.query.filter === filterName || isActive ?
+      'bg-cyan-200 text-black hover:bg-cyan-400' :
+      'bg-zinc-700 text-white hover:bg-cyan-900'
+    )"
+    active-class="bg-cyan-200 text-black hover:bg-cyan-400"
     aria-label="filter"
     :title="filterName"
+    :to="{ 
+      query: { 
+        page: $route.query.page || 1,
+        filter: filterName 
+      } 
+    }"
   >
     {{ filterName }}
-  </button>
+  </RouterLink>
 
 </template>
 
@@ -19,13 +29,16 @@
 <script setup>
   
 defineProps({
-
   filterName: {
     type: String,
     required: true,
   },
-
+  isActive: {
+    type: Boolean,
+    default: false
+  }
 })
+
 
 
 </script>

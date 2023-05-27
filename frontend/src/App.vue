@@ -1,12 +1,10 @@
 <template>
 
-  <div class="p-4 md:p-8">
+  <div>
 
-    <FilterDeck/>
-    <SearchBar class="mt-6"/>
-
-
-    <ImgDeck class="py-16"/>
+    <Titlebar/>
+    <RouterView :key="$route.fullPath"/>
+    <ImgModal/>
 
   </div>
 
@@ -14,9 +12,10 @@
 
 
 <script setup>
-import FilterDeck from './components/FilterDeck.vue';
-import SearchBar from './components/SearchBar.vue';
-import ImgDeck from './components/ImgDeck.vue';
+import ImgModal from './components/ImgModal.vue';
+import Titlebar from './components/Titlebar.vue';
+import { RouterView } from 'vue-router';
+
 
 </script>
 

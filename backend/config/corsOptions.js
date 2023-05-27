@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 export default {
   origin: [
     process.env.CLIENT_PROD_BASEURL,

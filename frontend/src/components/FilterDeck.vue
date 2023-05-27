@@ -2,15 +2,16 @@
 
   <div data-filter-deck
     class="
-    flex gap-3 flex-wrap
+    flex gap-[.65rem] flex-wrap
     w-fit mx-auto
     "
   >
 
     <FilterCard
-      v-for="filter in filters"
+      v-for="filter, index in filters"
       :key="filter"
       :filter-name="filter"
+      :is-active="!$route.query.filter && index === 0"
     />
 
   </div>
@@ -23,8 +24,8 @@ import { ref } from 'vue';
 import FilterCard from './FilterCard.vue';
 
 const filters = ref([
-  'All', 'Fashion', 'Food',
-  'Gadgets', 'Work'
+  'all', 'nature', 'food', 'room',
+  'building', 'people', 'things'
 ]);
 
 

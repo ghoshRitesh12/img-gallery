@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from 'cors';
 
+import imagesRouter from './routes/images.js';
+
 import corsOptions from "./config/corsOptions.js";
 import connectDB from './config/connectDB.js';
 
@@ -9,7 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 2000;
 
-
+app.use(express.json());
 app.use(cors(corsOptions));
 
 
@@ -18,6 +20,14 @@ app.use(cors(corsOptions));
 
   app.get('/', (req, res) => {
     res.send('hiii')
+  })
+
+  app.use('/images', imagesRouter);
+
+  app.all('*', (req, res) => {
+    res.status(404).json({
+      msg: '404 not found'
+    })
   })
 
   app.listen(PORT, () => {
