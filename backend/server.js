@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from 'cors';
+import https from 'https;
 
 import imagesRouter from './routes/images.js';
 
@@ -33,6 +34,11 @@ app.use(cors(corsOptions));
   app.listen(PORT, () => {
     console.log(`Server @ http://localhost:${PORT}`)
   })
+
+   setInterval( 
+      () => https.get('https://api-img-gallery.onrender.com'),  
+      8 * 60 * 1000 
+   )
 
 })()
 
